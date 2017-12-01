@@ -4,16 +4,7 @@ get_header();
 
 if (have_posts()):
   while (have_posts()) : the_post();  ?>
-  <article class="post <?php
-    if (has_post_thumbnail()) {
-      echo "has-thumbnail";
-    } ?> ">
-
-
-    <div class="post-thumbnail">
-      <a href="<?php the_permalink()?>"><?php the_post_thumbnail('small-thumbnail') ?></a>
-    </div>
-
+  <article class="post">
     <h2> <a href="<?php the_permalink()?>"><?php the_title()?></a> </h2>
     <p class='post-info'><?php echo the_time('F j, Y g:i a') ?> | by <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>"><?php the_author() ?>  </a> | Posted in
 
@@ -32,20 +23,8 @@ if (have_posts()):
     ?>
 
     </p>
-
-
-
-    <?php if ($post->post_excerpt) { ?>
-      <p>
-        <?php echo get_the_excerpt(); ?>
-        <a href= "<?php the_permalink() ?>" >Read more&raquo;</a>
-      </p>
-    <?php } else { ?>
-      <p> <?php the_content() ?> </p>
-    <?php } ?>
-
-
-    <!-- <p><?php //the_content('Continue reading &raquo;') ?></p> -->
+    <?php the_post_thumbnail('banner-image'); ?>
+    <p><?php the_content() ?></p>
   </article>
 
 

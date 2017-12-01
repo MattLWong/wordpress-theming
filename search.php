@@ -2,7 +2,11 @@
 
 get_header();
 
-if (have_posts()):
+if (have_posts()): ?>
+
+  <h2>Search results for: <?php the_search_query(); ?></h2>
+
+  <?php
   while (have_posts()) : the_post();  ?>
   <article class="post <?php
     if (has_post_thumbnail()) {
@@ -34,15 +38,7 @@ if (have_posts()):
     </p>
 
 
-
-    <?php if ($post->post_excerpt) { ?>
-      <p>
-        <?php echo get_the_excerpt(); ?>
-        <a href= "<?php the_permalink() ?>" >Read more&raquo;</a>
-      </p>
-    <?php } else { ?>
-      <p> <?php the_content() ?> </p>
-    <?php } ?>
+    <p> <?php the_excerpt() ?> </p>
 
 
     <!-- <p><?php //the_content('Continue reading &raquo;') ?></p> -->

@@ -21,17 +21,35 @@ function has_children() {
   return count($pages);
 }
 
+// Customize except word count length to 25 words
+function custom_excerpt_length() {
+  return 50 ;
+}
+
+add_filter('excerpt_length', "custom_excerpt_length");
+
 function learningWordpress_resources() {
   wp_enqueue_style('style', get_stylesheet_uri());
 }
 
 add_action('wp_enqueue_scripts', 'learningWordpress_resources');
 //Navigation Menus
-register_nav_menus(array(
-  "primaryyy" => __( "Primary Menuu"),
-  'footer' => __('Footer Menu')
-))
 
+// Theme setup
+function learningWordpress_setup() {
+//   // Add featured image supprt
+  add_theme_support("post-thumbnails");
+  add_image_size('small-thumbnail', 180, 120, true );
+  add_image_size('banner-image', 920, 210, array("left", "top"));
 
+//   // Navigation menus
+  register_nav_menus(array(
+    "primaryyy" => __( "Primary Menuu"),
+    'footer' => __('Footer Menu')
+  ));
+//
+}
+
+add_action('after_setup_theme', "learningWordpress_setup");
 
 ?>

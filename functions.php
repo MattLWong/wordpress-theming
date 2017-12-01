@@ -55,4 +55,48 @@ function learningWordpress_setup() {
 
 add_action('after_setup_theme', "learningWordpress_setup");
 
+//Add out Widget Locations
+
+function ourWidgetsInit() {
+  // register widget location
+  register_sidebar( array(
+    'name' => 'Sidebarr',
+    'id' => 'sidebar1',
+    'before_widget' => '<div class="widget-item">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="a-special-class">',
+    'after_title' => '</h2>'
+  ));
+
+  register_sidebar( array(
+    'name' => 'Footer Area 1',
+    'id' => 'footer1',
+    'before_widget' => '<div class="widget-item">',
+    'after_widget' => '</div>'
+  ));
+
+  register_sidebar( array(
+    'name' => 'Footer Area 2',
+    'id' => 'footer2',
+    'before_widget' => '<div class="widget-item">',
+    'after_widget' => '</div>'
+  ));
+
+  register_sidebar( array(
+    'name' => 'Footer Area 3',
+    'id' => 'footer3',
+    'before_widget' => '<div class="widget-item">',
+    'after_widget' => '</div>'
+  ));
+
+  register_sidebar( array(
+    'name' => 'Footer Area 4',
+    'id' => 'footer4',
+    'before_widget' => '<div class="widget-item">',
+    'after_widget' => '</div>'
+  ));
+}
+
+add_action('widgets_init', 'ourWidgetsInit');
+
 ?>

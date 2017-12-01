@@ -114,6 +114,27 @@ article.post:last-of-type {
   color: #FFF;
 }
 
+/*Main Column*/
+
+.main-column {
+  width: 66%;
+  float: left;
+}
+
+.secondary-column {
+  width: 33%;
+  float: right;
+}
+
+/*Footer Widget Area */
+
+.footer-widget-area {
+  width: 25%;
+  float: left;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
 /*Footer*/
 .site-footer {
   margin-top: 30px;

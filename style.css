@@ -106,7 +106,9 @@ article.post:last-of-type {
 }
 
 .site-header .site-nav ul li.current-menu-item a:link,
-.site-header .site-nav ul li.current-menu-item a:visited {
+.site-header .site-nav ul li.current-menu-item a:visited,
+.site-header .site-nav ul li.current-page-ancestor a:link,
+.site-header .site-nav ul li.current-page-ancestor a:visited {
   font-weight: bold;
   background-color: #006ec3;
   color: #FFF;
@@ -173,4 +175,58 @@ div.info-box h4 {
 
 div.info-box p {
   font-size: 85%;
+}
+
+/*Children Page Menu*/
+
+nav.children-links {
+  font-size: 80%;
+  margin-bottom: 20px;
+}
+
+nav.children-links ul li {
+  margin-right: 20px;
+}
+
+.children-links span.parent-link {
+  float: left;
+  margin-right: 20px;
+  padding-right: 20px;
+  border-right: 1px solid #DDD;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+span.parent-link a:link,
+span.parent-link a:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+nav.children-links ul li a:link,
+nav.children-links ul li a:visited {
+  text-decoration: none;
+}
+
+.children-links .current_page_item a:link,
+.children-links .current_page_item a:visited {
+  border-bottom: 1px solid #DDD;
+  color: #333;
+  cursor: default;
+}
+
+/*Post styles */
+
+.post h2 {
+  margin-bottom: 0px;
+}
+
+p.post-info {
+  font-size: 84%;
+  color: #999;
+}
+
+p.post-info a:link,
+p.post-info a:visited {
+  color: #999;
 }
